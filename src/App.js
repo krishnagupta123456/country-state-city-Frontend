@@ -1,25 +1,23 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Country from './components/Country';
+import City from './components/City';
 import './App.css';
+import State from './components/State';
+import DropDown from './components/DropDown';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <Routes>
+        <Route path='/' element={<Country/>}/>
+        <Route path='/state' element={<State/>}/>
+        <Route path='/city' element={<City/>}/>
+        <Route path='/dropdown' element={<DropDown/>}/>
+        
+      </Routes>
+
+    </Router>  );
 }
 
 export default App;
